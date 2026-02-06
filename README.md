@@ -1,7 +1,11 @@
-# chat_app
+# Chat App
 
-A new Flutter project.
+A simple chat application built with Flutter and Firebase.
 
+## Features
+- User registration & login with Firebase Auth
+- Real-time messaging using Firestore
+- State management with Cubit
 ## Getting Started
 
 This project is a starting point for a Flutter application.
