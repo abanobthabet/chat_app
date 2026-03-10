@@ -58,6 +58,9 @@ class _ChatScreenState extends State<ChatScreen> {
             child: TextField(
               controller: controller,
               onSubmitted: (data) {
+                BlocProvider.of<ChatCubit>(
+                  context,
+                ).sendMassege(massege: data, email: email);
                 controller.clear();
                 _controller.animateTo(
                   0,

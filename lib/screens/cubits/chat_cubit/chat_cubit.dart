@@ -28,6 +28,7 @@ class ChatCubit extends Cubit<ChatState> {
         .snapshots()
         .listen((event) {
           List<Masseges> massgelist = [];
+          massgelist.clear;
 
           for (var element in event.docs) {
             massgelist.add(Masseges.fromjson(element));

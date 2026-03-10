@@ -2,6 +2,7 @@ import 'package:chat_app/constants.dart';
 import 'package:chat_app/helper/show_snack_bar.dart';
 
 import 'package:chat_app/screens/chat_screen.dart';
+import 'package:chat_app/screens/cubits/chat_cubit/chat_cubit.dart';
 import 'package:chat_app/screens/cubits/login_cubit/login_cubit.dart';
 import 'package:chat_app/screens/register_screen.dart';
 import 'package:chat_app/widgets/custom_login.dart';
@@ -23,6 +24,7 @@ class LoginScreen extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
+          BlocProvider.of<ChatCubit>(context).getMassege();
           Navigator.pushNamed(context, ChatScreen.id);
         } else if (state is LoginFailure) {
           show_massege(context, massege: state.errmassege);
@@ -144,5 +146,4 @@ class LoginScreen extends StatelessWidget {
       },
     );
   }
-
 }
